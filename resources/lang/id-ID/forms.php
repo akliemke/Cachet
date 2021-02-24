@@ -22,7 +22,7 @@ return [
         'site_locale'      => 'Pilih Bahasa',
         'enable_google2fa' => 'Aktifkan Otentikasi Dua Faktor dengan Google',
         'cache_driver'     => 'Driver Cache',
-        'queue_driver'     => 'Antre Driver',
+        'queue_driver'     => 'Queue Driver',
         'session_driver'   => 'Driver Sesi',
         'mail_driver'      => 'Driver Email',
         'mail_host'        => 'Host Email',
@@ -41,7 +41,7 @@ return [
         'invalid-token' => 'Token tidak benar',
         'cookies'       => 'Mohon aktifkan cookies untuk login.',
         'rate-limit'    => 'Melebihi batas.',
-        'remember_me'   => 'Ingat saya',
+        'remember_me'   => 'Remember me',
     ],
 
     // Incidents form fields
@@ -49,12 +49,12 @@ return [
         'name'               => 'Nama',
         'status'             => 'Status',
         'component'          => 'Komponen',
-        'component_status'   => 'Component Status',
+        'component_status'   => 'Status Komponen',
         'message'            => 'Pesan',
         'message-help'       => 'Anda juga bisa menggunakan Markdown.',
-        'occurred_at'        => 'Kapan insiden ini terjadi?',
+        'occurred_at'        => 'When did this incident occur?',
         'notify_subscribers' => 'Beritahu subscriber',
-        'notify_disabled'    => 'Due to scheduled maintenance, notifications about this incident or its components will be suppressed.',
+        'notify_disabled'    => 'Karena adanya pemeliharaan, notifikasi insiden ini atau komponennya akan diprioritaskan.',
         'visibility'         => 'Tampilan Insiden',
         'stick_status'       => 'Buat Insiden Sticky',
         'stickied'           => 'Sticky',
@@ -73,8 +73,8 @@ return [
         'status'       => 'Status',
         'message'      => 'Pesan',
         'message-help' => 'Anda juga bisa menggunakan Markdown.',
-        'scheduled_at' => 'Kapan pemeliharaan ini dijadwalkan?',
-        'completed_at' => 'Kapan pemeliharaan ini selesai?',
+        'scheduled_at' => 'When is this maintenance scheduled for?',
+        'completed_at' => 'When did this maintenance complete?',
         'templates'    => [
             'name'     => 'Nama',
             'template' => 'Template',
@@ -135,9 +135,9 @@ return [
         'default_view'             => 'Tampilan default',
         'threshold'                => 'Dalam rentang berapa menit antara poin metrik?',
         'visibility'               => 'Visibilitas',
-        'visibility_authenticated' => 'Terlihat oleh pengguna terautentikasi',
-        'visibility_public'        => 'Terlihat oleh semua orang',
-        'visibility_hidden'        => 'Selalu tersembunyi',
+        'visibility_authenticated' => 'Visible to authenticated users',
+        'visibility_public'        => 'Visible to everybody',
+        'visibility_hidden'        => 'Always hidden',
 
         'points' => [
             'value' => 'Nilai',
@@ -153,21 +153,22 @@ return [
             'display-graphs'                        => 'Tampilkan grafik di halaman status?',
             'about-this-page'                       => 'Tentang halaman ini',
             'days-of-incidents'                     => 'Berapa hari insiden akan ditampilkan?',
-            'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Gambar Banner',
-            'banner-help'                           => 'Disarankan gambar yang anda unggah tidak lebih lebar dari 930px.',
+            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Bolehkan pengunjung mendaftar notifikasi email?',
-            'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
+            'suppress_notifications_in_maintenance' => 'Paksa munculnya notifikasi ketika insiden terjadi saat periode pemeliharaan?',
             'skip_subscriber_verification'          => 'Lewatkan verifikasi user? (Hati-hati, anda bisa kena spam)',
             'automatic_localization'                => 'Otomatis ganti bahasa halaman status anda ke bahasa pengunjung?',
             'enable_external_dependencies'          => 'Aktifkan Dependensi Pihak Ketiga (Font Google, Trackers, dll...)',
-            'show_timezone'                         => 'Tampilkan zona waktu dimana halaman status berjalan.',
+            'show_timezone'                         => 'Show the timezone the status page is running in',
             'only_disrupted_days'                   => 'Hanya tampilkan hari yang berisi insiden dalam linimasa?',
         ],
         'analytics' => [
             'analytics_google'       => 'Kode Google Analytics',
             'analytics_gosquared'    => 'Kode GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL Piwik anda (tanpa http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'ID situs Piwik',
         ],
         'localization' => [
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Format Waktu Insiden',
         ],
         'security' => [
-            'allowed-domains'      => 'Domain yang dibolehkan',
-            'allowed-domains-help' => 'Pisahkan dengan koma. Domain yang ada di atas otomatis akan dibolehkan.',
+            'allowed-domains'           => 'Domain yang dibolehkan',
+            'allowed-domains-help'      => 'Pisahkan dengan koma. Domain yang ada di atas otomatis akan dibolehkan.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Stylesheet Kustom',
@@ -188,7 +191,7 @@ return [
             'background-fills'        => 'Isian latar belakang (Komponen, Insiden, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Warna teks',
             'dashboard-login'         => 'Tampilkan tombol dashboard di footer?',
             'reds'                    => 'Merah (Digunakan jika ada kesalahan)',
@@ -218,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'email'       => 'Alamat Email Anggota Tim Anda',
         ],
     ],
 
     'general' => [
         'timezone' => 'Pilih zona waktu',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
@@ -238,7 +246,7 @@ return [
     'remove'         => 'Buang',
     'invite'         => 'Undang',
     'signup'         => 'Daftar',
-    'manage_updates' => 'Manage Updates',
+    'manage_updates' => 'Kelola Update',
 
     // Other
     'optional' => '* Tidak wajib',

@@ -18,12 +18,12 @@ return [
     'incidents' => [
         'title'                    => 'crwdns1400:0crwdne1400:0',
         'incidents'                => 'crwdns953:0crwdne953:0',
-        'logged'                   => 'crwdns1401:0{0}crwdnd1401:0[1]crwdne1401:0',
+        'logged'                   => 'crwdns1441:0{0}crwdnd1441:0[1]crwdne1441:0',
         'incident-create-template' => 'crwdns955:0crwdne955:0',
         'incident-templates'       => 'crwdns956:0crwdne956:0',
         'updates'                  => [
             'title'   => 'crwdns1402:0crwdne1402:0',
-            'count'   => 'crwdns1403:0{0}crwdnd1403:0[1]crwdnd1403:0[2]crwdne1403:0',
+            'count'   => 'crwdns1439:0{0}crwdnd1439:0[1]crwdnd1439:0[2]crwdne1439:0',
             'add'     => [
                 'title'   => 'crwdns1404:0crwdne1404:0',
                 'success' => 'crwdns1405:0crwdne1405:0',
@@ -35,6 +35,7 @@ return [
                 'failure' => 'crwdns1409:0crwdne1409:0',
             ],
         ],
+        'reported_by'              => 'crwdns1433:0crwdne1433:0',
         'add'                      => [
             'title'   => 'crwdns958:0crwdne958:0',
             'success' => 'crwdns959:0crwdne959:0',
@@ -55,7 +56,7 @@ return [
             'title' => 'crwdns968:0crwdne968:0',
             'add'   => [
                 'title'   => 'crwdns969:0crwdne969:0',
-                'message' => 'crwdns970:0crwdne970:0',
+                'message' => 'crwdns1443:0crwdne1443:0',
                 'success' => 'crwdns971:0crwdne971:0',
                 'failure' => 'crwdns972:0crwdne972:0',
             ],
@@ -74,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'crwdns1410:0crwdne1410:0',
-        'logged'       => 'crwdns1411:0{0}crwdnd1411:0[1]crwdne1411:0',
+        'logged'       => 'crwdns1440:0{0}crwdnd1440:0[1]crwdne1440:0',
         'scheduled_at' => 'crwdns980:0crwdne980:0',
         'add'          => [
             'title'   => 'crwdns1412:0crwdne1412:0',

@@ -49,12 +49,12 @@ return [
         'name'               => 'Name',
         'status'             => 'Status',
         'component'          => 'Komponente',
-        'component_status'   => 'Component Status',
+        'component_status'   => 'Komponentenstatus',
         'message'            => 'Nachricht',
         'message-help'       => 'Sie können auch Markdown verwenden.',
         'occurred_at'        => 'Wann ist dieser Vorfall aufgetreten?',
         'notify_subscribers' => 'Abonnenten benachrichtigen',
-        'notify_disabled'    => 'Due to scheduled maintenance, notifications about this incident or its components will be suppressed.',
+        'notify_disabled'    => 'Aufgrund von Wartungsarbeiten werden Benachrichtigungen über diesen Vorfall oder seiner Komponenten unterdrückt.',
         'visibility'         => 'Ereignis Sichtbarkeit',
         'stick_status'       => 'Vorfall anpinnen',
         'stickied'           => 'Angepinnt',
@@ -153,21 +153,22 @@ return [
             'display-graphs'                        => 'Graphen auf der Statusseite anzeigen?',
             'about-this-page'                       => 'Über diese Seite',
             'days-of-incidents'                     => 'Wie viele Tage mit Vorfällen sollen gezeigt werden?',
-            'time_before_refresh'                   => 'Aktualisierungsrate der Statusseite (in Sekunden).',
+            'time_before_refresh'                   => 'Aktualisierungsrate der Statusseite (in Sekunden)',
+            'major_outage_rate'                     => 'Grenzwert für schwerwiegende Ausfälle (in %)',
             'banner'                                => 'Banner Bild',
-            'banner-help'                           => 'Es wird empfohlen, dass Sie keine Dateien die breiter als 930 Pixel sind hochladen .',
+            'banner-help'                           => 'Es wird empfohlen, dass Sie keine Dateien, die breiter als 930 Pixel sind, hochladen',
             'subscribers'                           => 'Personen die Anmeldung für E-Mail-Benachrichtigung erlauben?',
-            'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
+            'suppress_notifications_in_maintenance' => 'Möchten Sie Benachrichtigungen über einen Vorfall während des Zeitraumes der Wartungsarbeiten unterdrücken?',
             'skip_subscriber_verification'          => 'Verifizierung der Nutzer überspringen? (Warnung, du könntest gespammt werden)',
             'automatic_localization'                => 'Die Status-Seite automatisch auf die Sprache deiner Besucher anpassen?',
             'enable_external_dependencies'          => 'Drittanbieter Abhängigkeiten erlauben (Google Schriftarten, Tracker, etc...)',
-            'show_timezone'                         => 'Zeitzone in der sich die Status-Seite befindet anzeigen.',
+            'show_timezone'                         => 'Zeitzone in der sich die Status-Seite befindet anzeigen',
             'only_disrupted_days'                   => 'Im Verlauf nur Tage mit Vorfällen anzeigen?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics Code',
             'analytics_gosquared'    => 'GoSquared Analytics Code',
-            'analytics_piwik_url'    => 'URL der Piwik-Instanz (ohne http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Piwik\'s Seiten-ID',
         ],
         'localization' => [
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Ereignis Uhrzeit Format',
         ],
         'security' => [
-            'allowed-domains'      => 'Erlaubte Domains',
-            'allowed-domains-help' => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
+            'allowed-domains'           => 'Erlaubte Domains',
+            'allowed-domains-help'      => 'Durch Kommata trennen. Die oben genannte Domain ist standardmäßig erlaubt.',
+            'always-authenticate'       => 'Immer anmelden',
+            'always-authenticate-help'  => 'Anmeldung für alle Cachet Seiten erzwingen',
         ],
         'stylesheet' => [
             'custom-css' => 'Benutzerdefiniertes Stylesheet',
@@ -188,7 +191,7 @@ return [
             'background-fills'        => 'Hintergrunddateien (Komponenten, Vorfälle, Footer)',
             'banner-background-color' => 'Banner Background Color',
             'banner-padding'          => 'Banner Padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Banner über komplette Breite?',
             'text-color'              => 'Schriftfarbe',
             'dashboard-login'         => 'Dashboard-Button im Footer anzeigen?',
             'reds'                    => 'Rot (Genutzt für Fehler)',
@@ -218,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'email'       => 'Die E-Mail Adresse deines Teammitgliedes',
         ],
     ],
 
     'general' => [
         'timezone' => 'Zeitzone wählen',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons

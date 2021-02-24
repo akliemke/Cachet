@@ -13,84 +13,92 @@ return [
     'component' => [
         'status_update' => [
             'mail' => [
-                'subject'  => 'تم تحديث حالة المكون',
-                'greeting' => 'تم تحديث حالة المكون!',
-                'content'  => 'تم تغيير حالة :name من :old_status إلى :new_status.',
-                'action'   => 'عرض',
+                'subject'  => 'Component Status Updated',
+                'greeting' => 'A component\'s status was updated!',
+                'content'  => ':name status changed from :old_status to :new_status.',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'تم تحديث حالة المكون',
-                'content' => 'تم تغيير حالة :name من :old_status إلى :new_status.',
+                'title'   => 'Component Status Updated',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
             'sms' => [
-                'content' => 'تم تغيير حالة :name من :old_status إلى :new_status.',
+                'content' => ':name status changed from :old_status to :new_status.',
             ],
         ],
     ],
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'تم الإبلاغ عن حالة جديدة',
-                'greeting' => 'تم الإبلاغ عن حالة جديدة في صفحة الحالة الخاصة بـ :app_name.',
-                'content'  => 'تم الإبلاغ عن حالة :name',
-                'action'   => 'عرض',
+                'subject'  => 'New Incident Reported',
+                'greeting' => 'A new incident was reported at :app_name.',
+                'content'  => 'Incident :name was reported',
+                'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'تم الإبلاغ عن حالة :name',
-                'content' => 'أبلغ عن حالة جديدة في صفحة الحالة الخاصة بـ :app_name',
+                'title'   => 'Incident :name Reported',
+                'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
-                'content' => 'تم الإبلاغ عن حالة جديدة في صفحة الحالة الخاصة بـ :app_name.',
+                'content' => 'A new incident was reported at :app_name.',
             ],
         ],
         'update' => [
             'mail' => [
-                'subject' => 'تم تحديث الحالة',
-                'content' => 'تم تحديث :name',
-                'title'   => 'تم تحديث :name إلى :new_status',
-                'action'  => 'عرض',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'تم تحديث :name',
-                'content' => 'تم تحديث :name إلى :new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'تم الإبلاغ عن حالة :name',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'تم جدولة عملية جديدة',
-                'content' => 'تم جدولة :name إلى :date',
-                'title'   => 'تم إنشاء صيانة مجدولة.',
-                'action'  => 'عرض',
+                'subject' => 'New Schedule Created',
+                'content' => ':name was scheduled for :date',
+                'title'   => 'A new scheduled maintenance was created.',
+                'action'  => 'View',
             ],
             'slack' => [
-                'title'   => 'تم إنشاء جدول جديد!',
-                'content' => 'تم جدولة :name إلى :date',
+                'title'   => 'New Schedule Created!',
+                'content' => ':name was scheduled for :date',
             ],
             'sms' => [
-                'content' => 'تم جدولة :name إلى :date',
+                'content' => ':name was scheduled for :date',
             ],
         ],
     ],
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'تحقق من إشتراكك',
-                'content' => 'تحقق من إشتراكك في صفحة الحالة الخاصة بـ :app_name.',
-                'title'   => 'تحقق من إشتراكك في صفحة الحالة الخاصة بـ :app_name.',
-                'action'  => 'تأكيد',
+                'subject' => 'Verify Your Subscription',
+                'content' => 'Click to verify your subscription to :app_name status page.',
+                'title'   => 'Verify your subscription to :app_name status page.',
+                'action'  => 'Verify',
+            ],
+        ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Manage Your Subscription',
+                'content' => 'Click to manage your subscription to :app_name status page.',
+                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'action'  => 'Manage subscription',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'تنبيه من Cachet!',
-                'content' => 'رسالة تنبيه تجريبية من Cachet!',
+                'subject' => 'Ping from Cachet!',
+                'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],
         ],
@@ -98,10 +106,10 @@ return [
     'user' => [
         'invite' => [
             'mail' => [
-                'subject' => 'دعوتك للإنضمام في الداخل...',
-                'content' => 'أنت مدعو للإنضمام إلى صفحة الحالة الخاصة بـ :app_name.',
-                'title'   => 'أنت مدعو للإنضمام إلى صفحة الحالة الخاصة بـ :app_name.',
-                'action'  => 'قبول',
+                'subject' => 'Your invitation is inside...',
+                'content' => 'You have been invited to join :app_name status page.',
+                'title'   => 'You\'re invited to join :app_name status page.',
+                'action'  => 'Accept',
             ],
         ],
     ],

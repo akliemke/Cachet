@@ -22,7 +22,7 @@ return [
         'site_locale'      => 'Seleziona la lingua',
         'enable_google2fa' => 'Abilita la Verifica in Due Passaggi di Google',
         'cache_driver'     => 'Driver per la cache',
-        'queue_driver'     => 'Coda Driver',
+        'queue_driver'     => 'Queue Driver',
         'session_driver'   => 'Driver per la sessione',
         'mail_driver'      => 'Driver di posta elettronica',
         'mail_host'        => 'Host di posta elettronica',
@@ -52,13 +52,13 @@ return [
         'component_status'   => 'Component Status',
         'message'            => 'Messaggio',
         'message-help'       => 'Si può anche utilizzare il linguaggio di Markdown.',
-        'occurred_at'        => 'Quando è accaduto questo incidente?',
+        'occurred_at'        => 'When did this incident occur?',
         'notify_subscribers' => 'Notificare gli iscritti?',
         'notify_disabled'    => 'Due to scheduled maintenance, notifications about this incident or its components will be suppressed.',
         'visibility'         => 'Visibilità segnalazione',
-        'stick_status'       => 'Fissa incidente',
-        'stickied'           => 'In rilievo',
-        'not_stickied'       => 'Non in rilievo',
+        'stick_status'       => 'Stick Incident',
+        'stickied'           => 'Stickied',
+        'not_stickied'       => 'Not Stickied',
         'public'             => 'Visibile al pubblico',
         'logged_in_only'     => 'Visibile solo agli utenti registrati',
         'templates'          => [
@@ -73,8 +73,8 @@ return [
         'status'       => 'Stato',
         'message'      => 'Messaggio',
         'message-help' => 'Si può anche utilizzare il linguaggio di Markdown.',
-        'scheduled_at' => 'Quando è prevista la manutenzione?',
-        'completed_at' => 'Quando è stata completata la manutenzione?',
+        'scheduled_at' => 'When is this maintenance scheduled for?',
+        'completed_at' => 'When did this maintenance complete?',
         'templates'    => [
             'name'     => 'Nome',
             'template' => 'Modello',
@@ -95,13 +95,13 @@ return [
 
         'groups' => [
             'name'                     => 'Nome',
-            'collapsing'               => 'Espandi/Comprimi opzioni',
+            'collapsing'               => 'Expand/Collapse options',
             'visible'                  => 'Sempre espanso',
             'collapsed'                => 'Comprimere il gruppo come impostazione predefinita',
             'collapsed_incident'       => 'Comprimere il gruppo, ma espandere se ci sono problemi',
             'visibility'               => 'Visibilità',
-            'visibility_public'        => 'Visibile al pubblico',
-            'visibility_authenticated' => 'Visibile solo agli utenti autenticati',
+            'visibility_public'        => 'Visible to public',
+            'visibility_authenticated' => 'Visible only to logged in users',
         ],
     ],
 
@@ -109,10 +109,10 @@ return [
     'actions' => [
         'name'               => 'Nome',
         'description'        => 'Descrizione',
-        'start_at'           => 'Pianifica ora di inizio',
+        'start_at'           => 'Schedule start time',
         'timezone'           => 'Fuso orario',
-        'schedule_frequency' => 'Pianificare la frequenza (in secondi)',
-        'completion_latency' => 'Latenza di completamento (in secondi)',
+        'schedule_frequency' => 'Schedule frequency (in seconds)',
+        'completion_latency' => 'Completion latency (in seconds)',
         'group'              => 'Gruppo',
         'active'             => 'Attivo?',
         'groups'             => [
@@ -135,8 +135,8 @@ return [
         'default_view'             => 'Vista predefinita',
         'threshold'                => 'Quanti minuti di soglia tra metriche punti?',
         'visibility'               => 'Visibilità',
-        'visibility_authenticated' => 'Visibile agli utenti autenticati',
-        'visibility_public'        => 'Visibile a tutti',
+        'visibility_authenticated' => 'Visible to authenticated users',
+        'visibility_public'        => 'Visible to everybody',
         'visibility_hidden'        => 'Sempre nascosto',
 
         'points' => [
@@ -153,21 +153,22 @@ return [
             'display-graphs'                        => 'Visualizzare i grafici nella pagina di stato?',
             'about-this-page'                       => 'Informazioni sulla pagina',
             'days-of-incidents'                     => 'Quanti giorni di segnalazioni mostrare?',
-            'time_before_refresh'                   => 'Frequenza di aggiornamento della pagina di stato (in secondi).',
+            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Immagine del banner',
-            'banner-help'                           => 'È consigliabile caricare file larghi non più di 930px.',
+            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Permettere alle persone di iscriversi alle notifiche via email?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
-            'skip_subscriber_verification'          => 'Skip verifica degli utenti? (Attenzione, potreste ricevere spam)',
+            'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'                => 'Tradurre automaticamente la tua pagina di stato nella lingua del visitatore?',
-            'enable_external_dependencies'          => 'Attivare le dipendenze di terze parti (Google Fonts, Trackers, ecc...)',
-            'show_timezone'                         => 'Visualizza il fuso orario nella pagina stato.',
-            'only_disrupted_days'                   => 'Mostra solo i giorni contenenti incidenti nella timeline?',
+            'enable_external_dependencies'          => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
+            'show_timezone'                         => 'Show the timezone the status page is running in',
+            'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Codice Google Analytics',
             'analytics_gosquared'    => 'Codice GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL dell\'istanza Piwik (senza http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Id del sito Piwik',
         ],
         'localization' => [
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Formato timestamp della segnalazione',
         ],
         'security' => [
-            'allowed-domains'      => 'Domini consentiti',
-            'allowed-domains-help' => 'Separati da virgola. Il dominio impostato sopra è automaticamente consentito per impostazione predefinita.',
+            'allowed-domains'           => 'Domini consentiti',
+            'allowed-domains-help'      => 'Separati da virgola. Il dominio impostato sopra è automaticamente consentito per impostazione predefinita.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Foglio di stile personalizzato',
@@ -188,7 +191,7 @@ return [
             'background-fills'        => 'Riempimento sfondo (componenti, segnalazioni, footer)',
             'banner-background-color' => 'Colore di sfondo del banner',
             'banner-padding'          => 'Padding del banner',
-            'fullwidth-banner'        => 'Abilitare banner a piena larghezza?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Colore del testo',
             'dashboard-login'         => 'Mostrare pulsante del pannello amministrativo nel footer?',
             'reds'                    => 'Rosso (utilizzato per gli errori)',
@@ -218,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Invita i membri del gruppo inserendo qui i loro indirizzi e-mail.',
-            'email'       => 'Email #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
     'general' => [
-        'timezone' => 'Seleziona Fuso orario',
+        'timezone' => 'Select Timezone',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
@@ -238,7 +246,7 @@ return [
     'remove'         => 'Rimuovi',
     'invite'         => 'Invita',
     'signup'         => 'Registrati',
-    'manage_updates' => 'Gestisci gli aggiornamenti',
+    'manage_updates' => 'Manage Updates',
 
     // Other
     'optional' => '* Opzionale',

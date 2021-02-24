@@ -30,14 +30,14 @@ return [
     'incident' => [
         'new' => [
             'mail' => [
-                'subject'  => 'Novo incidente Reportado',
+                'subject'  => 'Novo incidente reportado',
                 'greeting' => 'Um novo incidente foi reportado em :app_name.',
                 'content'  => 'O Incidente :name foi reportado',
                 'action'   => 'Visualizar',
             ],
             'slack' => [
-                'title'   => 'Incidente :name Reportado',
-                'content' => 'Um novo incidente foi reportado em :app_name',
+                'title'   => 'Incidente :name reportado',
+                'content' => 'Um novo incidente foi relatado em :app_name',
             ],
             'sms' => [
                 'content' => 'Um novo incidente foi reportado em :app_name.',
@@ -55,7 +55,7 @@ return [
                 'content' => ':name foi atualizado para :new_status',
             ],
             'sms' => [
-                'content' => 'Incidente :nome foi atualizado',
+                'content' => 'Incidente :name foi atualizado',
             ],
         ],
     ],
@@ -79,10 +79,18 @@ return [
     'subscriber' => [
         'verify' => [
             'mail' => [
-                'subject' => 'Verificar a sua inscrição',
-                'content' => 'Clique para verificar sua inscrição na página de status de :app_name.',
-                'title'   => 'Verificar sua inscrição na página de status de :app_name.',
-                'action'  => 'Verificar',
+                'subject' => 'Verifique a sua inscrição',
+                'content' => 'Clique para verificar sua inscrição na página de status :app_name.',
+                'title'   => 'Verifique sua inscrição na página de status de :app_name.',
+                'action'  => 'Verifique',
+            ],
+        ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Gerenciar inscrição',
+                'content' => 'Clique para gerenciar sua inscrição na página de status de :app_name.',
+                'title'   => 'Clique para gerenciar sua inscrição na página de status de :app_name.',
+                'action'  => 'Gerenciar inscrição',
             ],
         ],
     ],
@@ -99,8 +107,8 @@ return [
         'invite' => [
             'mail' => [
                 'subject' => 'Seu convite está aqui dentro...',
-                'content' => 'Você foi convidado a juntar-se a página de status de :app_name.',
-                'title'   => 'Você está convidado a juntar-se a página de status de :app_name.',
+                'content' => 'Você foi convidado para fazer parte da página de status :app_name.',
+                'title'   => 'Você foi convidado para fazer parte da página de status :app_name.',
                 'action'  => 'Aceitar',
             ],
         ],

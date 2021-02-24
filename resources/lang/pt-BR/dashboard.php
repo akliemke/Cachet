@@ -12,29 +12,30 @@
 return [
 
     'dashboard'          => 'Dashboard',
-    'writeable_settings' => 'O diretório de configurações do Cachet não é gravável. Certifique-se de que<code>./bootstrap/cachet</code> é gravável pelo servidor web.',
+    'writeable_settings' => 'O diretório de configurações do Cachet não é gravável. Certifique-se de que <code>./bootstrap/cachet</code> é gravável pelo servidor web.',
 
     // Incidents
     'incidents' => [
         'title'                    => 'Incidentes & Agendamentos',
         'incidents'                => 'Incidentes',
-        'logged'                   => '{0} Não existem incidentes, bom trabalho.|[1] Você registrou um incidente.|[2,*] Você reportou <strong>:count</strong> incidentes.',
+        'logged'                   => '{0}Não existem incidentes, bom trabalho.|[1]Você adicionou um incidente.|[2,*]Você reportou <strong>:count</strong> incidentes.',
         'incident-create-template' => 'Criar template',
         'incident-templates'       => 'Template de incidentes',
         'updates'                  => [
             'title'   => 'Atualizações para o incidente :incident',
-            'count'   => '{0} Zero Atualizações|[1] Uma Atualização|[2] Duas Atualizações|[3,*] Várias Atualizações',
+            'count'   => '{0}Nenhuma atualização|[1]Uma atualização|[2]Duas atualizações|[3,*]Várias atualizações',
             'add'     => [
                 'title'   => 'Crie uma nova atualização de incidente',
-                'success' => 'Seu novo incidente foi criado.',
+                'success' => 'Sua atualização de incidente foi criada.',
                 'failure' => 'Algo deu errado com a atualização do incidente.',
             ],
             'edit' => [
                 'title'   => 'Editar atualização do incidente',
-                'success' => 'O incidente foi atualizado.',
-                'failure' => 'Algo deu errado ao atualizar o incidente',
+                'success' => 'Sua atualização de incidente foi atualizada.',
+                'failure' => 'Algo deu errado ao atualizar as informações do incidente',
             ],
         ],
+        'reported_by'              => 'Reported :timestamp by :user',
         'add'                      => [
             'title'   => 'Relatar um incidente',
             'success' => 'Incidente adicionado.',
@@ -55,7 +56,7 @@ return [
             'title' => 'Template de incidentes',
             'add'   => [
                 'title'   => 'Criar um modelo de incidente',
-                'message' => 'Você deve adicionar um modelo de incidente.',
+                'message' => 'Crie seu primeiro template de incidente.',
                 'success' => 'Seu novo modelo de incidente foi criado.',
                 'failure' => 'Algo deu errado com o modelo de incidente.',
             ],
@@ -74,21 +75,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Manutenção',
-        'logged'       => '{0} Não existem agendamentos, bom trabalho.|[1] Você introduziu um agendamento.|[2,*] Você reportou <strong>:count</strong> agendamentos.',
+        'logged'       => '{0}Ainda não ocorreu nenhuma manuteção, bom trabalho. |[1]Você agendou uma manuteção. | [2, *] Você adicionou <strong>:</strong> manutenções.',
         'scheduled_at' => 'Agendada em :timestamp',
         'add'          => [
-            'title'   => 'Adicionar manutenção programada',
-            'success' => 'Agendamento adicionado.',
-            'failure' => 'Ocorreu um problema ao adicionar a programação, por favor tente novamente.',
+            'title'   => 'Adicionar manutenção agendada',
+            'success' => 'Manutenção adicionada.',
+            'failure' => 'Algo deu errado ao adicionar a Manutenção, por favor tente novamente.',
         ],
         'edit' => [
-            'title'   => 'Edite a manutenção agendada',
-            'success' => 'A programação foi atualizada!',
-            'failure' => 'Ocorreu um problema ao editar a programação, por favor tente novamente.',
+            'title'   => 'Editar Manutenção',
+            'success' => 'Manutenção atualizada!',
+            'failure' => 'Algo deu errado ao editar a Manutenção, por favor tente novamente.',
         ],
         'delete' => [
             'success' => 'A manutenção programada foi excluída e não aparecerá na sua página de status.',
-            'failure' => 'A manutenção programada não pode ser excluída, por favor tente novamente.',
+            'failure' => 'A Manutenção não pôde ser excluída, por favor tente novamente.',
         ],
     ],
 

@@ -13,12 +13,12 @@ return [
 
     // Setup form fields
     'setup' => [
-        'email'            => 'E-mail',
+        'email'            => 'Email',
         'username'         => 'Username',
-        'password'         => 'Κωδικός πρόσβασης',
-        'site_name'        => 'Όνομα ιστοσελίδας',
+        'password'         => 'Password',
+        'site_name'        => 'Site Name',
         'site_domain'      => 'Site Domain',
-        'site_timezone'    => 'Επιλέξτε τη ζώνη ώρας σας',
+        'site_timezone'    => 'Select your timezone',
         'site_locale'      => 'Select your language',
         'enable_google2fa' => 'Enable Google Two Factor Authentication',
         'cache_driver'     => 'Cache Driver',
@@ -34,8 +34,8 @@ return [
     // Login form fields
     'login' => [
         'login'         => 'Username or Email',
-        'email'         => 'E-mail',
-        'password'      => 'Κωδικός πρόσβασης',
+        'email'         => 'Email',
+        'password'      => 'Password',
         '2fauth'        => 'Authentication Code',
         'invalid'       => 'Invalid username or password',
         'invalid-token' => 'Invalid token',
@@ -47,10 +47,10 @@ return [
     // Incidents form fields
     'incidents' => [
         'name'               => 'Name',
-        'status'             => 'Κατάσταση',
+        'status'             => 'Status',
         'component'          => 'Component',
         'component_status'   => 'Component Status',
-        'message'            => 'Μήνυμα',
+        'message'            => 'Message',
         'message-help'       => 'You may also use Markdown.',
         'occurred_at'        => 'When did this incident occur?',
         'notify_subscribers' => 'Notify subscribers?',
@@ -70,8 +70,8 @@ return [
 
     'schedules' => [
         'name'         => 'Name',
-        'status'       => 'Κατάσταση',
-        'message'      => 'Μήνυμα',
+        'status'       => 'Status',
+        'message'      => 'Message',
         'message-help' => 'You may also use Markdown.',
         'scheduled_at' => 'When is this maintenance scheduled for?',
         'completed_at' => 'When did this maintenance complete?',
@@ -85,10 +85,10 @@ return [
     // Components form fields
     'components' => [
         'name'        => 'Name',
-        'status'      => 'Κατάσταση',
-        'group'       => 'Ομάδα',
+        'status'      => 'Status',
+        'group'       => 'Group',
         'description' => 'Description',
-        'link'        => 'Σύνδεσμος',
+        'link'        => 'Link',
         'tags'        => 'Tags',
         'tags-help'   => 'Comma separated.',
         'enabled'     => 'Component enabled?',
@@ -113,7 +113,7 @@ return [
         'timezone'           => 'Timezone',
         'schedule_frequency' => 'Schedule frequency (in seconds)',
         'completion_latency' => 'Completion latency (in seconds)',
-        'group'              => 'Ομάδα',
+        'group'              => 'Group',
         'active'             => 'Active?',
         'groups'             => [
             'name' => 'Group Name',
@@ -130,7 +130,7 @@ return [
         'default-value'            => 'Default value',
         'calc_type'                => 'Calculation of metrics',
         'type_sum'                 => 'Sum',
-        'type_avg'                 => 'Μέσος όρος',
+        'type_avg'                 => 'Average',
         'places'                   => 'Decimal places',
         'default_view'             => 'Default view',
         'threshold'                => 'How many minutes of threshold between metric points?',
@@ -148,26 +148,27 @@ return [
     'settings' => [
         // Application setup
         'app-setup' => [
-            'site-name'                             => 'Όνομα ιστοσελίδας',
-            'site-url'                              => 'Διεύθυνση URL ιστοσελίδας',
+            'site-name'                             => 'Site Name',
+            'site-url'                              => 'Site URL',
             'display-graphs'                        => 'Display graphs on status page?',
             'about-this-page'                       => 'About this page',
             'days-of-incidents'                     => 'How many days of incidents to show?',
-            'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Banner Image',
-            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide .",
+            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Allow people to signup to email notifications?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'                => 'Automatically localise your status page to your visitor\'s language?',
             'enable_external_dependencies'          => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
-            'show_timezone'                         => 'Show the timezone the status page is running in.',
+            'show_timezone'                         => 'Show the timezone the status page is running in',
             'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
-            'allowed-domains'      => 'Allowed domains',
-            'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
+            'allowed-domains'           => 'Allowed domains',
+            'allowed-domains-help'      => 'Comma separated. The domain set above is automatically allowed by default.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Custom Stylesheet',
@@ -188,7 +191,7 @@ return [
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Text color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
@@ -203,8 +206,8 @@ return [
 
     'user' => [
         'username'       => 'Username',
-        'email'          => 'E-mail',
-        'password'       => 'Κωδικός πρόσβασης',
+        'email'          => 'Email',
+        'password'       => 'Password',
         'api-token'      => 'API Token',
         'api-token-help' => 'Regenerating your API token will prevent existing applications from accessing Cachet.',
         'gravatar'       => 'Change your profile picture at Gravatar.',
@@ -218,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
     'general' => [
         'timezone' => 'Select Timezone',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
@@ -237,7 +245,7 @@ return [
     'cancel'         => 'Cancel',
     'remove'         => 'Remove',
     'invite'         => 'Invite',
-    'signup'         => 'Εγγραφή',
+    'signup'         => 'Sign Up',
     'manage_updates' => 'Manage Updates',
 
     // Other

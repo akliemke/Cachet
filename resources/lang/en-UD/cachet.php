@@ -53,7 +53,7 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => 'crwdns1397:0crwdne1397:0',
+        'good'  => 'crwdns1437:0crwdne1437:0',
         'bad'   => 'crwdns1398:0crwdne1398:0',
         'major' => 'crwdns1399:0crwdne1399:0',
     ],
@@ -81,6 +81,7 @@ return [
         'manage'      => [
             'no_subscriptions' => 'crwdns910:0crwdne910:0',
             'my_subscriptions' => 'crwdns911:0crwdne911:0',
+            'manage_at_link'   => 'crwdns1432:0crwdne1432:0',
         ],
         'email' => [
             'subscribe'          => 'crwdns912:0crwdne912:0',
@@ -117,9 +118,18 @@ return [
         ],
     ],
 
+    // Meta descriptions
+    'meta' => [
+        'description' => [
+            'incident'  => 'crwdns1428:0crwdne1428:0',
+            'schedule'  => 'crwdns1429:0crwdne1429:0',
+            'subscribe' => 'crwdns1430:0crwdne1430:0',
+            'overview'  => 'crwdns1431:0crwdne1431:0',
+        ],
+    ],
+
     // Other
     'home'            => 'crwdns942:0crwdne942:0',
-    'description'     => 'crwdns943:0crwdne943:0',
     'powered_by'      => 'crwdns944:0crwdne944:0',
     'timezone'        => 'crwdns945:0crwdne945:0',
     'about_this_site' => 'crwdns946:0crwdne946:0',

@@ -45,24 +45,24 @@ return [
         ],
         'update' => [
             'mail' => [
-                'subject' => 'Händelse uppdaterad',
-                'content' => ': namn uppdaterades',
-                'title'   => ':name uppdaterades till :new_status',
+                'subject' => 'Incident Updated',
+                'content' => ':name was updated',
+                'title'   => ':name was updated to :new_status',
                 'action'  => 'View',
             ],
             'slack' => [
-                'title'   => ':name uppdaterat',
-                'content' => ':name uppdaterades till :new_status',
+                'title'   => ':name Updated',
+                'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name uppdaterades',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Nytt schema skapat',
+                'subject' => 'New Schedule Created',
                 'content' => ':name was scheduled for :date',
                 'title'   => 'A new scheduled maintenance was created.',
                 'action'  => 'View',
@@ -82,14 +82,22 @@ return [
                 'subject' => 'Verify Your Subscription',
                 'content' => 'Click to verify your subscription to :app_name status page.',
                 'title'   => 'Verify your subscription to :app_name status page.',
-                'action'  => 'Verifiera',
+                'action'  => 'Verify',
+            ],
+        ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Manage Your Subscription',
+                'content' => 'Click to manage your subscription to :app_name status page.',
+                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'action'  => 'Manage subscription',
             ],
         ],
     ],
     'system' => [
         'test' => [
             'mail' => [
-                'subject' => 'Ping från Cachet!',
+                'subject' => 'Ping from Cachet!',
                 'content' => 'This is a test notification from Cachet!',
                 'title'   => '🔔',
             ],

@@ -47,7 +47,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,37 +173,31 @@ return [
         /*
          * Packages Service Providers...
          */
+        env('APP_DEBUG') ? Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class : null,
         AltThree\Badger\BadgerServiceProvider::class,
         AltThree\Emoji\EmojiServiceProvider::class,
-        AltThree\Logger\LoggerServiceProvider::class,
         AltThree\Twitter\TwitterServiceProvider::class,
-        BackupManager\Laravel\Laravel5ServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
-        Fideloper\Proxy\TrustedProxyServiceProvider::class,
+        env('APP_DEBUG') ? Barryvdh\Debugbar\ServiceProvider::class : null,
         GrahamCampbell\Binput\BinputServiceProvider::class,
-        GrahamCampbell\Core\CoreServiceProvider::class,
         GrahamCampbell\Exceptions\ExceptionsServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
         GrahamCampbell\Security\SecurityServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
-        Laravolt\Avatar\ServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
-        PragmaRX\Google2FA\Vendor\Laravel\ServiceProvider::class,
-        Roumen\Feed\FeedServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        CachetHQ\Cachet\Foundation\Providers\AppServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ComposerServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ConsoleServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ConfigServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\EventServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\IntegrationServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\ModuleServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider::class,
-        CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider::class,
+        CachetHQ\Cachet\Providers\AppServiceProvider::class,
+        CachetHQ\Cachet\Providers\ComposerServiceProvider::class,
+        CachetHQ\Cachet\Providers\ConsoleServiceProvider::class,
+        CachetHQ\Cachet\Providers\ConfigServiceProvider::class,
+        CachetHQ\Cachet\Providers\EventServiceProvider::class,
+        CachetHQ\Cachet\Providers\IntegrationServiceProvider::class,
+        CachetHQ\Cachet\Providers\RepositoryServiceProvider::class,
+        CachetHQ\Cachet\Providers\RouteServiceProvider::class,
 
     ]),
 

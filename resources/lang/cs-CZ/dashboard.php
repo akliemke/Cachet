@@ -16,25 +16,26 @@ return [
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Incidenty &amp; Plán',
+        'title'                    => 'Incidenty &amp; Plán odstávek',
         'incidents'                => 'Incidenty',
-        'logged'                   => '{0} Nejsou hlášeny žádné incidenty, dobrá práce. | Zapsali jste jeden incident. | Nahlásili jste <strong>:count</strong> incident(y).',
+        'logged'                   => '{0}Nejsou hlášeny žádné incidenty, dobrá práce.|[1]Zapsali jste jeden incident.|[2,*]Nahlásili jste <strong>:count</strong> incidentů.',
         'incident-create-template' => 'Vytvořit šablonu',
         'incident-templates'       => 'Šablony incidentů',
         'updates'                  => [
-            'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'title'   => 'Aktualizace incidentu :incident',
+            'count'   => '{0}žádné aktualizace |[1]jedna aktualizace |[2]dvě aktualizace | [3, *] Několik aktualizací',
             'add'     => [
                 'title'   => 'Vytvořit novou zprávu k události',
-                'success' => 'Your new incident update has been created.',
-                'failure' => 'Something went wrong with the incident update.',
+                'success' => 'Vaše aktualizace incidentu byla vytvořena.',
+                'failure' => 'Při aktualizaci incidentu se něco pokazilo.',
             ],
             'edit' => [
-                'title'   => 'Edit incident update',
-                'success' => 'The incident update has been updated.',
-                'failure' => 'Something went wrong updating the incident update',
+                'title'   => 'Editovat aktualizace incidentu',
+                'success' => 'Událost byla aktualizována.',
+                'failure' => 'Při aktualizaci incidentu se něco pokazilo',
             ],
         ],
+        'reported_by'              => 'Nahlášeno :timestamp od :user',
         'add'                      => [
             'title'   => 'Nahlásit incident',
             'success' => 'Incident byl přidán.',
@@ -74,21 +75,21 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Plánovaná odstávka',
-        'logged'       => '{0} Žádná údržba není v plánu, skvělá práce.|Je v plánu jedna údržba.|Je v plánu <strong>:count</strong> údržb.',
+        'logged'       => '{0}Žádná údržba není v plánu, dobrá práce.|[1]Naplánovali jste jednu údržbu.|[2,*]Jsou v plánu <strong>:count</strong> údržby.',
         'scheduled_at' => 'Naplánováno na :timestamp',
         'add'          => [
-            'title'   => 'Přidat plánovanou údržbu',
-            'success' => 'Údržba byla přidána.',
-            'failure' => 'Něco se pokazilo při přidávání údržby, zkus to znova.',
+            'title'   => 'Přidat plánovanou odstávku',
+            'success' => 'Odstávka byla přidána.',
+            'failure' => 'Něco se pokazilo při přidávání odstávky, zkus to znova.',
         ],
         'edit' => [
-            'title'   => 'Upravit naplánovanou údržbu',
-            'success' => 'Údržba byla aktualizovaná!',
-            'failure' => 'Něco se pokazilo při úpravě údržby, zkus to znova.',
+            'title'   => 'Upravit naplánovanou odstávku',
+            'success' => 'Odstávka byla aktualizovaná!',
+            'failure' => 'Něco se pokazilo při úpravě odstávky, zkus to znova.',
         ],
         'delete' => [
-            'success' => 'Plánovaná údržba byla smazána a nebude se zobrazovat na hlavní stránce.',
-            'failure' => 'Plánovaná údržba nemohla být smazána, zkus to znova.',
+            'success' => 'Plánovaná odstávka byla smazána a nebude se zobrazovat na hlavní stránce.',
+            'failure' => 'Plánovaná odstávka nemohla být smazána, zkus to znova.',
         ],
     ],
 
@@ -156,13 +157,13 @@ return [
     // Subscribers
     'subscribers' => [
         'subscribers'          => 'Odběratelé',
-        'description'          => 'Odběratelé obdrží aktualizace e-mailem, pokuď dojde ke vzniku incidentu.',
-        'description_disabled' => 'To use this feature, you need allow people to signup for notifications.',
+        'description'          => 'Pokud dojde ke vzniku incidentu nebo služby, odběratelé obdrží aktualizace e-mailem.',
+        'description_disabled' => 'Chcete-li použít tuto funkci, potřebujete povolit uživatelům registraci pro oznámení.',
         'verified'             => 'Ověřeno',
         'not_verified'         => 'Neověřeno',
         'subscriber'           => ': e-mail, přihlášen: datum',
         'no_subscriptions'     => 'Přihlášeno k zasílání všech aktualizací',
-        'global'               => 'Globally subscribed',
+        'global'               => 'Globálně odebírané',
         'add'                  => [
             'title'   => 'Přidat nového odběratele',
             'success' => 'Odběratel přidán.',
@@ -212,13 +213,13 @@ return [
             'too-big'     => 'Soubor, který nahráváte, je příliš velký. Nahrajte obrázek menší než :velikost',
         ],
         'analytics' => [
-            'analytics' => 'Analytiky',
+            'analytics' => 'Monitoring přístupů',
         ],
         'log' => [
             'log' => 'Záznamy',
         ],
         'localization' => [
-            'localization' => 'Lokalizace',
+            'localization' => 'Lokální nastavení',
         ],
         'customization' => [
             'customization' => 'Vlastní nastavení',
@@ -226,7 +227,7 @@ return [
             'footer'        => 'Vlastní zápatí HTML',
         ],
         'mail' => [
-            'mail'  => 'Mail',
+            'mail'  => 'E-Mail',
             'test'  => 'Vyzkoušet',
             'email' => [
                 'subject' => 'Testovací oznámení z Cachet',
@@ -241,7 +242,7 @@ return [
             'stylesheet' => 'Šablona stylů',
         ],
         'theme' => [
-            'theme' => 'Motiv vzhledu',
+            'theme' => 'Nastavení vzhledu',
         ],
         'edit' => [
             'success' => 'Nastavení uložena.',
@@ -272,7 +273,7 @@ return [
 
     // Notifications
     'notifications' => [
-        'notifications' => 'Ozmámení',
+        'notifications' => 'Oznámení',
         'awesome'       => 'Vynikající.',
         'whoops'        => 'Jejda.',
     ],
@@ -287,7 +288,7 @@ return [
 
     // Welcome modal
     'welcome' => [
-        'welcome' => 'Vítej na tvé nové Status stránce!',
+        'welcome' => 'Vítej na tvé nové Status stránce, :username!',
         'message' => 'Vaše stavová stránka je téměř připravena! Možná budete chtít upravit další nastavení',
         'close'   => 'Přejít rovnou do řídícího panelu',
         'steps'   => [

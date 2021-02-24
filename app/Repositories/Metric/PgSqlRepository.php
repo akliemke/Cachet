@@ -13,7 +13,6 @@ namespace CachetHQ\Cachet\Repositories\Metric;
 
 use CachetHQ\Cachet\Models\Metric;
 use Illuminate\Support\Facades\DB;
-use Jenssegers\Date\Date;
 
 /**
  * This is the pgsql repository class.
@@ -38,10 +37,10 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.created_at >= (NOW() - INTERVAL '{$minutes}' MINUTE) ".
             "AND {$this->getMetricPointsTable()}.created_at <= NOW() ".
-            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:MI') ".
-            "ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:MI')", [
-            'metricId' => $metric->id,
-        ]);
+            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:MI') ".
+            "ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:MI')", [
+                'metricId' => $metric->id,
+            ]);
 
         return $this->mapResults($metric, $points);
     }
@@ -62,10 +61,10 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.created_at >= (NOW() - INTERVAL '{$hour}' HOUR) ".
             "AND {$this->getMetricPointsTable()}.created_at <= NOW() ".
-            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:00') ".
-            "ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'HH24:00')", [
-            'metricId' => $metric->id,
-        ]);
+            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:00') ".
+            "ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:00')", [
+                'metricId' => $metric->id,
+            ]);
 
         return $this->mapResults($metric, $points);
     }
@@ -81,15 +80,15 @@ class PgSqlRepository extends AbstractMetricRepository implements MetricInterfac
     public function getPointsSinceDay(Metric $metric, $day)
     {
         $queryType = $this->getQueryType($metric);
-        $points = DB::select("SELECT DATE({$this->getMetricPointsTable()}.created_at) AS key, {$queryType} ".
+        $points = DB::select("SELECT to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:00') AS key, {$queryType} ".
             "FROM {$this->getMetricsTable()} INNER JOIN {$this->getMetricPointsTable()} ON {$this->getMetricsTable()}.id = {$this->getMetricPointsTable()}.metric_id ".
             "WHERE {$this->getMetricsTable()}.id = :metricId ".
             "AND {$this->getMetricPointsTable()}.created_at >= (DATE(NOW()) - INTERVAL '{$day}' DAY) ".
             "AND {$this->getMetricPointsTable()}.created_at <= DATE(NOW()) ".
-            "GROUP BY DATE({$this->getMetricPointsTable()}.created_at) ".
-            "ORDER BY DATE({$this->getMetricPointsTable()}.created_at)", [
-            'metricId' => $metric->id,
-        ]);
+            "GROUP BY to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:00')".
+            "ORDER BY to_char({$this->getMetricPointsTable()}.created_at, 'YYYY-MM-DD HH24:00')", [
+                'metricId' => $metric->id,
+            ]);
 
         return $this->mapResults($metric, $points);
     }

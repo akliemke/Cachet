@@ -153,21 +153,22 @@ return [
             'display-graphs'                        => 'Display graphs on status page?',
             'about-this-page'                       => 'About this page',
             'days-of-incidents'                     => 'How many days of incidents to show?',
-            'time_before_refresh'                   => 'Status page refresh rate (in seconds).',
+            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Banner Image',
-            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide .",
+            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Allow people to signup to email notifications?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Skip verifying of users? (Be warned, you could be spammed)',
             'automatic_localization'                => 'Automatically localise your status page to your visitor\'s language?',
             'enable_external_dependencies'          => 'Enable Third Party Dependencies (Google Fonts, Trackers, etc...)',
-            'show_timezone'                         => 'Show the timezone the status page is running in.',
+            'show_timezone'                         => 'Show the timezone the status page is running in',
             'only_disrupted_days'                   => 'Only show days containing incidents in the timeline?',
         ],
         'analytics' => [
             'analytics_google'       => 'Google Analytics code',
             'analytics_gosquared'    => 'GoSquared Analytics code',
-            'analytics_piwik_url'    => 'URL of your Piwik instance (without http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Piwik\'s site id',
         ],
         'localization' => [
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Incident timestamp format',
         ],
         'security' => [
-            'allowed-domains'      => 'Allowed domains',
-            'allowed-domains-help' => 'Comma separated. The domain set above is automatically allowed by default.',
+            'allowed-domains'           => 'Allowed domains',
+            'allowed-domains-help'      => 'Comma separated. The domain set above is automatically allowed by default.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Custom Stylesheet',
@@ -188,7 +191,7 @@ return [
             'background-fills'        => 'Background fills (components, incidents, footer)',
             'banner-background-color' => 'Banner background color',
             'banner-padding'          => 'Banner padding',
-            'fullwidth-banner'        => 'Enable fullwidth banner?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Text color',
             'dashboard-login'         => 'Show dashboard button in the footer?',
             'reds'                    => 'Red (used for errors)',
@@ -218,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Invite your team members by entering their email addresses here.',
-            'email'       => 'Email #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
     'general' => [
         'timezone' => 'Select Timezone',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons

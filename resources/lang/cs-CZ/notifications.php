@@ -85,6 +85,14 @@ return [
                 'action'  => 'Ověřit',
             ],
         ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Spravovat e-mailové odběry',
+                'content' => 'Klikněte pro potvrzení odběru stavové stránky :app_name.',
+                'title'   => 'Klikněte pro potvrzení odběru stavové stránky :app_name.',
+                'action'  => 'Spravovat odběry',
+            ],
+        ],
     ],
     'system' => [
         'test' => [

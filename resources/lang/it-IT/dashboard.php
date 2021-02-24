@@ -12,20 +12,20 @@
 return [
 
     'dashboard'          => 'Pannello amministrativo',
-    'writeable_settings' => 'Gkj6grnj.',
+    'writeable_settings' => 'The Cachet settings directory is not writeable. Please make sure that <code>./bootstrap/cachet</code> is writeable by the web server.',
 
     // Incidents
     'incidents' => [
-        'title'                    => 'Segnalazioni &amp; Pianificazione',
+        'title'                    => 'Incidents & Maintenance',
         'incidents'                => 'Incidenti',
-        'logged'                   => '{0} Non ci sono segnalazioni, ottimo lavoro.|Hai notificato una segnalazione.|Hai notificato <strong>:count</strong> segnalazioni.',
+        'logged'                   => '{0}There are no incidents, good work.|[1]You have logged one incident.|[2,*]You have reported <strong>:count</strong> incidents.',
         'incident-create-template' => 'Crea Modello',
         'incident-templates'       => 'Modelli di segnalazione',
         'updates'                  => [
             'title'   => 'Incident updates for :incident',
-            'count'   => '{0} Zero Updates|[1] One Update|[2] Two Updates|[3,*] Several Updates',
+            'count'   => '{0}Zero Updates|[1]One Update|[2]Two Updates|[3,*]Several Updates',
             'add'     => [
-                'title'   => 'Crea nuovo aggiornamento incidente',
+                'title'   => 'Create new incident update',
                 'success' => 'Your new incident update has been created.',
                 'failure' => 'Something went wrong with the incident update.',
             ],
@@ -35,6 +35,7 @@ return [
                 'failure' => 'Something went wrong updating the incident update',
             ],
         ],
+        'reported_by'              => 'Reported :timestamp by :user',
         'add'                      => [
             'title'   => 'Riporta un problema',
             'success' => 'Segnalazione aggiunta.',
@@ -55,7 +56,7 @@ return [
             'title' => 'Modelli di segnalazione',
             'add'   => [
                 'title'   => 'Crea un modello di segnalazione',
-                'message' => 'È necessario aggiungere un modello di segnalazione.',
+                'message' => 'Create your first incident template.',
                 'success' => 'Il tuo nuovo modello di segnalazione è stato creato.',
                 'failure' => 'Qualcosa è andato storto con il modello di segnalazione.',
             ],
@@ -73,22 +74,22 @@ return [
 
     // Incident Maintenance
     'schedule' => [
-        'schedule'     => 'Manutenzione programmata',
-        'logged'       => '{0} non ci sono pianificazioni, buon lavoro. | Hai annotato una pianificazione. | Hai riportato <strong>:count</strong> pianificazioni.',
+        'schedule'     => 'Maintenance',
+        'logged'       => '{0}There has been no Maintenance, good work.|[1]You have logged one schedule.|[2,*]You have reported <strong>:count</strong> schedules.',
         'scheduled_at' => 'Pianificato alle :timestamp',
         'add'          => [
-            'title'   => 'Aggiungi manutenzione programmata',
-            'success' => 'Pianificazione aggiunta.',
-            'failure' => 'Qualcosa è andato storto aggiungendo la pianificazione, si prega di riprovare.',
+            'title'   => 'Add Maintenance',
+            'success' => 'Maintenance added.',
+            'failure' => 'Something went wrong adding the Maintenance, please try again.',
         ],
         'edit' => [
-            'title'   => 'Modifica la manutenzione programmata',
-            'success' => 'La pianificazione è stata aggiornata!',
-            'failure' => 'Qualcosa è andato storto con la modifica della pianificazione, si prega di riprovare.',
+            'title'   => 'Edit Maintenance',
+            'success' => 'Maintenance has been updated!',
+            'failure' => 'Something went wrong editing the Maintenance, please try again.',
         ],
         'delete' => [
-            'success' => 'La manutenzione programmata è stata eliminata e non verrà visualizzata nella tua pagina di stato.',
-            'failure' => 'Non è stato possibile eliminare la manutenzione programmata, si prega di riprovare.',
+            'success' => 'The Maintenance has been deleted and will not show on your status page.',
+            'failure' => 'The Maintenance could not be deleted, please try again.',
         ],
     ],
 
@@ -226,11 +227,11 @@ return [
             'footer'        => 'Footer HTML personalizzato',
         ],
         'mail' => [
-            'mail'  => 'E-Mail',
-            'test'  => 'Prova',
+            'mail'  => 'Mail',
+            'test'  => 'Test',
             'email' => [
-                'subject' => 'Prova notifica da Cachet',
-                'body'    => 'Questa è una notifica di prova da Cachet.',
+                'subject' => 'Test notification from Cachet',
+                'body'    => 'This is a test notification from Cachet.',
             ],
         ],
         'security' => [

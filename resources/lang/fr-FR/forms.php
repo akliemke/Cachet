@@ -49,7 +49,7 @@ return [
         'name'               => 'Nom',
         'status'             => 'Statut',
         'component'          => 'Composant',
-        'component_status'   => 'Statut des composants',
+        'component_status'   => 'Component Status',
         'message'            => 'Message',
         'message-help'       => 'Vous pouvez également utiliser le format Markdown.',
         'occurred_at'        => 'Quand s\'est produit cet incident ?',
@@ -153,21 +153,22 @@ return [
             'display-graphs'                        => 'Afficher les graphiques sur la page de statut ?',
             'about-this-page'                       => 'À propos de cette page',
             'days-of-incidents'                     => 'Combien de jours d\'incidents à montrer ?',
-            'time_before_refresh'                   => 'Fréquence de rafraîchissement de la page de statut (en secondes).',
+            'time_before_refresh'                   => 'Status page refresh rate (in seconds)',
+            'major_outage_rate'                     => 'Major outage threshold (in %)',
             'banner'                                => 'Image d\'en-tête',
-            'banner-help'                           => 'Il est recommandé de téléchargez un fichier ne dépassant pas 930px de large .',
+            'banner-help'                           => "It's recommended that you upload files no bigger than 930px wide",
             'subscribers'                           => 'Permettre aux personnes de s\'inscrire aux notifications par e-mail ?',
             'suppress_notifications_in_maintenance' => 'Suppress notifications when incident occurs during maintenance period?',
             'skip_subscriber_verification'          => 'Ne pas vérifier les utilisateurs ? (Attention, vous pourriez être spammé)',
             'automatic_localization'                => 'Traduire automatiquement votre page de statut dans la langue du visiteur ?',
             'enable_external_dependencies'          => 'Activer les dépendances tierces (Google Fonts, Trackers, etc...)',
-            'show_timezone'                         => 'Afficher le fuseau horaire sur la page de statut.',
+            'show_timezone'                         => 'Show the timezone the status page is running in',
             'only_disrupted_days'                   => 'Afficher uniquement les jours contenant des incidents dans la timeline ?',
         ],
         'analytics' => [
             'analytics_google'       => 'Code de Google Analytics',
             'analytics_gosquared'    => 'Code de GoSquared Analytics',
-            'analytics_piwik_url'    => 'URL de votre instance de Piwik (sans http(s)://)',
+            'analytics_piwik_url'    => 'URL of your Piwik instance',
             'analytics_piwik_siteid' => 'Id du site de Piwik',
         ],
         'localization' => [
@@ -177,8 +178,10 @@ return [
             'incident-date-format' => 'Format de la date de l\'incident',
         ],
         'security' => [
-            'allowed-domains'      => 'Domaines autorisés',
-            'allowed-domains-help' => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
+            'allowed-domains'           => 'Domaines autorisés',
+            'allowed-domains-help'      => 'Séparés par des virgules. Le domaine défini ci-dessus est automatiquement autorisé par défaut.',
+            'always-authenticate'       => 'Always authenticate',
+            'always-authenticate-help'  => 'Require login to view any Cachet page',
         ],
         'stylesheet' => [
             'custom-css' => 'Feuille de style personnalisée',
@@ -188,7 +191,7 @@ return [
             'background-fills'        => 'Couleur de remplissage de l\'arrière-plan (composants, incidents, pied de page)',
             'banner-background-color' => 'Couleur d\'arrière-plan de l\'en-tête',
             'banner-padding'          => 'Marge de l\'en-tête',
-            'fullwidth-banner'        => 'Activer l\'en-tête en pleine largeur ?',
+            'fullwidth-banner'        => 'Enable full width banner?',
             'text-color'              => 'Couleur du texte',
             'dashboard-login'         => 'Afficher le bouton "Tableau de bord" dans le pied de page ?',
             'reds'                    => 'Rouge (utilisé pour les erreurs)',
@@ -218,12 +221,17 @@ return [
         ],
         'team' => [
             'description' => 'Invitez les membres de votre équipe en entrant leurs adresses e-mail ici.',
-            'email'       => 'E-mail #:id',
+            'email'       => 'Your Team Members Email Address',
         ],
     ],
 
     'general' => [
         'timezone' => 'Sélection du fuseau horaire',
+    ],
+
+    'seo' => [
+        'title'        => 'SEO Title',
+        'description'  => 'SEO Description',
     ],
 
     // Buttons
@@ -238,7 +246,7 @@ return [
     'remove'         => 'Enlever',
     'invite'         => 'Inviter',
     'signup'         => 'Inscription',
-    'manage_updates' => 'Gérer les mises à jour',
+    'manage_updates' => 'Manage Updates',
 
     // Other
     'optional' => '* Optionnel',

@@ -36,7 +36,7 @@ return [
                 'action'   => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'Vorfall :name wurde gemeldet',
+                'title'   => 'Vorfall :name gemeldet',
                 'content' => 'Ein neuer Vorfall wurde auf der :app_name Status Seite gemeldet',
             ],
             'sms' => [
@@ -51,7 +51,7 @@ return [
                 'action'  => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => ':name wurde aktualisiert',
+                'title'   => ':name aktualisiert',
                 'content' => ':name wurde auf :new_status aktualisiert',
             ],
             'sms' => [
@@ -85,6 +85,14 @@ return [
                 'action'  => 'Bestätigen',
             ],
         ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Manage Your Subscription',
+                'content' => 'Click to manage your subscription to :app_name status page.',
+                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'action'  => 'Abonnements verwalten',
+            ],
+        ],
     ],
     'system' => [
         'test' => [
@@ -99,8 +107,8 @@ return [
         'invite' => [
             'mail' => [
                 'subject' => 'Ihre Einladung wartet auf Sie...',
-                'content' => 'Sie wurden eingeladen um der :app_name Statusseite beizutreten.',
-                'title'   => 'Sie wurden eingeladen um der :app_name Statusseite beizutreten.',
+                'content' => 'Sie wurden eingeladen, um der :app_name Statusseite beizutreten.',
+                'title'   => 'Sie sind dazu eingeladen, der :app_name Statusseite beizutreten.',
                 'action'  => 'Akzeptieren',
             ],
         ],

@@ -32,11 +32,11 @@ return [
             'mail' => [
                 'subject'  => 'New Incident Reported',
                 'greeting' => 'A new incident was reported at :app_name.',
-                'content'  => 'Incident :name was updated',
+                'content'  => 'Incident :name was reported',
                 'action'   => 'View',
             ],
             'slack' => [
-                'title'   => 'Incident :name was reported',
+                'title'   => 'Incident :name Reported',
                 'content' => 'A new incident was reported at :app_name',
             ],
             'sms' => [
@@ -55,7 +55,7 @@ return [
                 'content' => ':name was updated to :new_status',
             ],
             'sms' => [
-                'content' => 'Incident :name was reported',
+                'content' => 'Incident :name was updated',
             ],
         ],
     ],
@@ -83,6 +83,14 @@ return [
                 'content' => 'Click to verify your subscription to :app_name status page.',
                 'title'   => 'Verify your subscription to :app_name status page.',
                 'action'  => 'Verify',
+            ],
+        ],
+        'manage' => [
+            'mail' => [
+                'subject' => 'Manage Your Subscription',
+                'content' => 'Click to manage your subscription to :app_name status page.',
+                'title'   => 'Click to manage your subscription to :app_name status page.',
+                'action'  => 'Manage subscription',
             ],
         ],
     ],

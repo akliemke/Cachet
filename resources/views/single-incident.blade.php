@@ -1,8 +1,8 @@
 @extends('layout.master')
 
-@section('title', $incident->name.' | '.$site_title)
+@section('title', array_get($incident->meta, 'seo.title', $incident->name).' | '.$siteTitle)
 
-@section('description', trans('cachet.meta.description.incident', ['name' => $incident->name, 'date' => $incident->occurred_at_formatted]))
+@section('description', array_get($incident->meta, 'seo.description', trans('cachet.meta.description.incident', ['name' => $incident->name, 'date' => $incident->occurred_at_formatted])))
 
 @section('bodyClass', 'no-padding')
 
@@ -33,7 +33,7 @@
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
                     <div class="panel panel-message incident">
                         <div class="panel-body">
-                            @if($current_user)
+                            @if($currentUser)
                             <div class="pull-right btn-group">
                                 <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
                             </div>
@@ -46,7 +46,7 @@
                             <small>
                                 <span data-toggle="tooltip" title="
                                     {{ trans('cachet.incidents.posted_at', ['timestamp' => $update->created_at_formatted]) }}">
-                                    {{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff]) }}
+                                    {{ trans('cachet.incidents.posted', ['timestamp' => $update->created_at_diff,'username' => $update->user->username]) }}
                                 </span>
                             </small>
                         </div>
